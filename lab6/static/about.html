@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#14532d">
+    <meta name="description" content="О лабораторной работе №6 и конвертере валют.">
+    <title>О проекте — КурсLab</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" href="/static/icon-192.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="На главную">
+            <span class="brand-icon" aria-hidden="true">↗</span>
+            <span>Курс<span class="brand-accent">Lab</span></span>
+        </a>
+        <nav aria-label="Основная навигация">
+            <a href="/">Конвертер</a>
+            <a href="/about" aria-current="page">О проекте</a>
+        </nav>
+    </header>
+
+    <main class="about-main">
+        <section class="hero">
+            <p class="eyebrow">Лабораторная работа №6 · Вариант 7</p>
+            <h1>О <span>проекте.</span></h1>
+            <p class="hero-copy">Знакомство с Python, FastAPI и прогрессивными веб-приложениями.</p>
+        </section>
+
+        <section class="about-card">
+            <h2>Конвертер валют</h2>
+            <p>Работу выполнил Ярослав Бормотов. Приложение преобразует USD, EUR и RUB по фиксированным курсам. Серверная часть написана на Python с использованием FastAPI.</p>
+            <h3>Что реализовано</h3>
+            <ul>
+                <li>Страницы главная и «О проекте», а также JSON-маршрут состояния API.</li>
+                <li>Query-параметры <code>from</code>, <code>to</code> и <code>amount</code> для конвертации.</li>
+                <li>Проверка валют и положительной суммы с HTTP 400 для некорректных значений.</li>
+                <li>Манифест, устанавливаемое приложение и кеширование страниц service worker.</li>
+                <li>Локальный расчёт по тем же курсам, если сервер недоступен офлайн.</li>
+            </ul>
+            <a class="back-link" href="/">← Вернуться к конвертеру</a>
+        </section>
+    </main>
+
+    <footer>
+        <span>FastAPI · PWA · Вариант 7</span>
+        <a href="/api/status">Статус API</a>
+    </footer>
+</body>
+</html>

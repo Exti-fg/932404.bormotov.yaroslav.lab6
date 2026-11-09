@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#14532d">
+    <meta name="description" content="Конвертер валют с фиксированными курсами. Работает офлайн.">
+    <title>Конвертер валют — лабораторная №6</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" href="/static/icon-192.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="На главную">
+            <span class="brand-icon" aria-hidden="true">↗</span>
+            <span>Курс<span class="brand-accent">Lab</span></span>
+        </a>
+        <nav aria-label="Основная навигация">
+            <a href="/">Конвертер</a>
+            <a href="/about">О проекте</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <p class="eyebrow">Лабораторная работа №6 · Вариант 7</p>
+            <h1 id="page-title">Валюта —<br><span>без границ.</span></h1>
+            <p class="hero-copy">Быстрая конвертация по фиксированным курсам. Даже когда вы не в сети.</p>
+        </section>
+
+        <section class="converter-card" aria-labelledby="converter-title">
+            <div class="card-heading">
+                <div>
+                    <p class="eyebrow">Калькулятор</p>
+                    <h2 id="converter-title">Конвертация</h2>
+                </div>
+                <span class="live-badge"><span aria-hidden="true"></span> Фиксированные курсы</span>
+            </div>
+
+            <form id="convert-form">
+                <label for="amount">Сумма</label>
+                <input id="amount" name="amount" type="number" min="0.01" step="any"
+                       value="100" inputmode="decimal" required>
+
+                <div class="currency-row">
+                    <div class="field-group">
+                        <label for="from-currency">Из валюты</label>
+                        <select id="from-currency" name="from">
+                            <option value="USD">USD — Доллар США</option>
+                            <option value="EUR">EUR — Евро</option>
+                            <option value="RUB">RUB — Российский рубль</option>
+                        </select>
+                    </div>
+                    <span class="direction" aria-hidden="true">→</span>
+                    <div class="field-group">
+                        <label for="to-currency">В валюту</label>
+                        <select id="to-currency" name="to">
+                            <option value="RUB" selected>RUB — Российский рубль</option>
+                            <option value="EUR">EUR — Евро</option>
+                            <option value="USD">USD — Доллар США</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="convert-button" type="submit">
+                    Рассчитать <span aria-hidden="true">↗</span>
+                </button>
+            </form>
+
+            <div id="result" class="result" aria-live="polite" aria-atomic="true" hidden>
+                <p class="result-label">Результат</p>
+                <p id="result-value" class="result-value"></p>
+                <p id="result-rate" class="result-rate"></p>
+            </div>
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="rates" aria-label="Фиксированные курсы">
+            <div><span>USD <span aria-hidden="true">→</span> EUR</span><strong>0,92</strong></div>
+            <div><span>EUR <span aria-hidden="true">→</span> RUB</span><strong>105</strong></div>
+            <div><span>USD <span aria-hidden="true">→</span> RUB</span><strong>92</strong></div>
+        </section>
+    </main>
+
+    <footer>
+        <span>FastAPI · PWA · Вариант 7</span>
+        <a href="/api/status">Статус API</a>
+    </footer>
+</body>
+</html>
